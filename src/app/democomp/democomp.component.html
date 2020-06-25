@@ -1,0 +1,47 @@
+<p [style.color] ="hasColor? 'blue': 'crimson'">Testing style binding !!</p>
+
+<h1 [style.color]=" col ">pkkay</h1>
+
+
+<h2>perfrom proprty binding from {{ myname }}</h2>
+<input type="text" value="usha" [id]="name" [disabled]="false">
+<input type="text" value="gupta" [id]="name">
+
+
+<button (click)="enteryAccpect($event)" class="hellDecoration">Go To Hell</button>
+{{ whishing }}
+
+<input type="text" #tempVarible [(ngModel)]="name">
+{{ name }}
+{{ tempVarible.value}}
+
+<h1></h1>
+
+<p *ngIf="result; else elseBlock">Here is my name </p>
+{{result}}
+
+<ng-template #thenBlock>
+    <p>then block test</p>
+</ng-template>
+
+<ng-template #elseBlock>
+    <p>else  bloxk test</p>
+</ng-template>
+
+
+<div [ngSwitch]="colorChoice">
+    <h1 *ngSwitchCase="'red'">red, h1</h1>
+    <h2 *ngSwitchCase="'black'">black, h2</h2>
+    <h3 *ngSwitchCase="'blue'">blue, h3</h3>
+    <h4 *ngSwitchCase="'green'">green, h4</h4>
+</div>
+
+<select class="list" (change)= "changeFontSize($event.target.value)">
+    <option *ngFor="let choice of choices">{{ choice }}</option>
+</select>
+
+
+<div *ngFor="let choice of choices">
+
+    <p>{{ choice }}</p>
+</div>
