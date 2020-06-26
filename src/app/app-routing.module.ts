@@ -6,7 +6,7 @@ import { DemocompComponent } from './democomp/democomp.component'
 
 const routes: Routes = [
   {path: "", component: FooterComponent },
-  {path: "", component: DemocompComponent}
+  {path: "demo", component: DemocompComponent}
 ];
 
 @NgModule({

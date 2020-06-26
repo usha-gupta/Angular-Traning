@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { getCurrencySymbol } from '@angular/common';
+import { FoodService } from '../food.service';
+import { Observable } from 'rxjs'
+import { from } from 'rxjs';
+
 
 @Component({
   selector: 'app-democomp',
@@ -20,14 +24,25 @@ export class DemocompComponent implements OnInit {
       console.log(event);
       this.whishing=event.offsetY;
   }
-   constructor() {
+   constructor( public foodService: FoodService) {
     
    }
 
   ngOnInit() {
     this.myname="usha"
     this.res=false;
-   
+
+  //  this.foodService.getFoodDetails().subscribe(this.listData)
+  //  this.foodService.foodDetailInUpperCase().subscribe(this.listData)
+   this.foodService.foodListStatFromVowels().subscribe(this.listData)
+  }
+
+
+  
+  listData(value) {
+    console.log(value)
   }
 
 }
+
+
